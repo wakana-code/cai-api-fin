@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: #ffd84d;
+  color: #171411;
+}
+
+.cls-grid {
+  background-image: linear-gradient(rgba(23, 20, 17, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 20, 17, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.72) 58%, transparent 100%);
+}
+
+.input-panel {
+  animation: lift-in 600ms ease both;
+}
+
+.result-panel {
+  animation: result-in 500ms ease both;
+}
+
+.status-badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #171411;
+  background: #f4efe7;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.status-badge.is-done {
+  background: #c7f36f;
+}
+
+.status-badge.is-error {
+  background: #ffb09a;
+}
+
+@keyframes lift-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) rotate(-0.5deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes result-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
